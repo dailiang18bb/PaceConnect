@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "548932723896",
+    "firebase_url": "https://pace-connect.firebaseio.com",
+    "project_id": "pace-connect",
+    "storage_bucket": "pace-connect.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548932723896:android:d9ff9bf3f49557a1",
+        "android_client_info": {
+          "package_name": "com.example.android.paceconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548932723896-pf7njtrtv5t7puqh4fq8pevlscsqc1nl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.paceconnect",
+            "certificate_hash": "f57d92004cfc436ac2ca55b737b01bd2ba2d82ff"
+          }
+        },
+        {
+          "client_id": "548932723896-m8o5lmje393eud70pa6nadr3jkkgv27m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8TogKvi3H9ueUhV4qFac_sISV_KfvA3s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548932723896-m8o5lmje393eud70pa6nadr3jkkgv27m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
