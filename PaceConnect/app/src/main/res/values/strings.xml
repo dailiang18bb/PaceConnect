@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PaceConnect</string>
+    <string name="welcome_title_1">Welcome to</string>
+    <string name="welcome_title_2">Pace Connect</string>
+    <string name="welcome_pace_ID">"     PaceID"</string>
+    <string name="welcome_password">Password</string>
+    <string name="welcome_forgot_password">Forgot Password</string>
+    <string name="welcome_register">Register</string>
+    <string name="welcome_copy_right">Copyright © 2018 PACE CS639 PLV, All Rights Reserved.</string>
+</resources>
