@@ -23,8 +23,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePageActivity" />
-        <activity android:name=".MapActivity"></activity>
-        <activity android:name=".EmailPasswordActivity"></activity>
+        <activity android:name=".MapActivity"/>
+        <activity android:name=".SettingActivity"/>
+        <activity android:name=".ChatActivity"/>
+        <activity android:name=".RateActivity"/>
+
 
 
         <meta-data

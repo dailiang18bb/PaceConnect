@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -28,6 +29,13 @@ import java.util.Arrays;
  * <p>
  * Github repository address
  * https://github.com/dailiang18bb/PaceConnect
+ * <p>
+ * We are programmer, we don't do poster!
+ * While(alive){
+ * eat();
+ * code();
+ * sleep();
+ * }
  */
 
 public class WelcomePageActivity extends AppCompatActivity {
@@ -37,8 +45,13 @@ public class WelcomePageActivity extends AppCompatActivity {
     public static final int RC_SIGN_IN = 1;
 
     private String mUserName;
+    private String mUserEmail;
 
-    ImageView mMapImageView;
+    private ImageView mMapImageView;
+    private ImageView mSettingImageView;
+    private ImageView mChatImageView;
+    private ImageView mRateImageView;
+    private TextView mUserNameTextView;
 
 
     @Override
@@ -55,11 +68,14 @@ public class WelcomePageActivity extends AppCompatActivity {
                 if (user != null) {
                     // TODO when Sign in
                     onSignedInInitialize(user.getDisplayName());
+                    mUserNameTextView.setText(user.getDisplayName());
+                    mUserName = user.getDisplayName();
+                    mUserEmail = user.getEmail();
+
                     //Toast.makeText(WelcomePageActivity.this, R.string.auth_sign_in_toast, Toast.LENGTH_SHORT).show();
                 } else {
                     // TODO when Sign out
                     //onSignedOutCleanUp();
-
                     startActivityForResult(
                             AuthUI.getInstance()
                                     .createSignInIntentBuilder()
@@ -68,14 +84,17 @@ public class WelcomePageActivity extends AppCompatActivity {
                                             new AuthUI.IdpConfig.EmailBuilder().build()))
                                     .build(),
                             RC_SIGN_IN);
+
                 }
             }
         };
 
 
         mMapImageView = findViewById(R.id.map_button);
-
-
+        mSettingImageView = findViewById(R.id.setting_button);
+        mChatImageView = findViewById(R.id.chat_button);
+        mRateImageView = findViewById(R.id.rate_button);
+        mUserNameTextView = findViewById(R.id.user_name_textview);
 
 
         mMapImageView.setOnClickListener(new View.OnClickListener() {
@@ -86,45 +105,32 @@ public class WelcomePageActivity extends AppCompatActivity {
             }
         });
 
+        mSettingImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
+                intent.putExtra("UserName", mUserName);
+                intent.putExtra("UserEmail", mUserEmail);
+                startActivity(intent);
+            }
+        });
 
+        mChatImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mRateImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), RateActivity.class);
+                startActivity(intent);
+            }
+        });
     }
-
-
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        updateUI(currentUser);
-//        //
-//        mAuth.addAuthStateListener(mAuthStateListener);
-//    }
-//
-//
-//     //Create new account by Email
-//    private void createAccount() {
-//        mAuth.createUserWithEmailAndPassword(email, password)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            // Sign in success, update UI with the signed-in user's information
-//                            Log.d(TAG, "createUserWithEmail:success");
-//                            FirebaseUser user = mAuth.getCurrentUser();
-//                            updateUI(user);
-//                        } else {
-//                            // If sign in fails, display a message to the user.
-//                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-//                            Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
-//                                    Toast.LENGTH_SHORT).show();
-//                            updateUI(null);
-//                        }
-//
-//                        // ...
-//                    }
-//                });
-//    }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -133,6 +139,7 @@ public class WelcomePageActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 // Sign-in succeeded, set up the UI
                 Toast.makeText(this, "Signed in!", Toast.LENGTH_SHORT).show();
+
             } else if (resultCode == RESULT_CANCELED) {
                 // Sign in was canceled by the user, finish the activity
                 Toast.makeText(this, "Sign in canceled", Toast.LENGTH_SHORT).show();
@@ -158,8 +165,6 @@ public class WelcomePageActivity extends AppCompatActivity {
     }
 
     private void onSignedInInitialize(String username) {
-
-
     }
 
     private void onSignedOutCleanUp() {

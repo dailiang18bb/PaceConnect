@@ -2,34 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="welcome aboard" />
+        android:layout_gravity="center"
+        android:text="@string/welcome_title_1"
+        android:textSize="48sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="your user name is" />
+        android:layout_gravity="center"
+        android:text="@string/welcome_title_2"
+        android:textSize="48sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/pace_logo_1" />
+
+    <TextView
+        android:id="@+id/user_name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"/>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <ImageView
+            android:id="@+id/rate_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@color/accent_red"
             android:src="@drawable/ic_person_white_24dp" />
 
         <ImageView
+            android:id="@+id/chat_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@color/accent_green"
             android:src="@drawable/ic_chat_white_24dp" />
@@ -45,14 +66,15 @@
         <ImageView
             android:id="@+id/map_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@color/accent_yellow"
             android:src="@drawable/ic_map_white_24dp" />
 
         <ImageView
+            android:id="@+id/setting_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@color/accent_blue"
             android:src="@drawable/ic_settings_white_24dp" />
@@ -61,3 +83,4 @@
 
 
 </LinearLayout>
+

@@ -11,4 +11,7 @@
     <string name="sign_out">sign out</string>
 
     <string name="auth_sign_in_toast">You\'re now signed in. Welcome to Pace Connect!</string>
+
+    <string name="name_text_view">Name:</string>
+    <string name="email_text_view">Email:</string>
 </resources>
