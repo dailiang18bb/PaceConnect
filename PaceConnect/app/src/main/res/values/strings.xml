@@ -14,4 +14,10 @@
 
     <string name="name_text_view">Name:</string>
     <string name="email_text_view">Email:</string>
+    <string name="send_button_label">Send</string>
+    <string name="chat_activity_label">Chat</string>
+    <string name="rate_activity_label">Rate Professor</string>
+    <string name="setting_activity_label">Setting</string>
+    <string name="map_activity_label">Map</string>
+
 </resources>

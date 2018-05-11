@@ -119,6 +119,8 @@ public class WelcomePageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+                intent.putExtra("UserName", mUserName);
+                intent.putExtra("UserEmail", mUserEmail);
                 startActivity(intent);
             }
         });

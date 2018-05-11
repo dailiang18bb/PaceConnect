@@ -12,4 +12,6 @@
     <color name="accent_red">#FFDE4414</color>
     <color name="accent_green">#FF9CB31D</color>
 
+    <color name="colorTitle">#ffffff</color>
+
 </resources>
