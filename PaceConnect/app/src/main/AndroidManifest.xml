@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePageActivity" />
-        <activity android:name=".Map"></activity>
+        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".EmailPasswordActivity"></activity>
 
 
         <meta-data
@@ -32,6 +33,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC2p5QmY5sbGBKY8ELObzFRoya7NLuYcxk" />
+
     </application>
 
 

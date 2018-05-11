@@ -4,6 +4,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,7 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * An activity that displays a Google map with a marker (pin) to indicate a particular location.
  */
 
-public class Map extends AppCompatActivity implements OnMapReadyCallback {
+public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,25 +39,28 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
      * If Google Play services is not installed on the device, the user receives a prompt to install
      * Play services inside the SupportMapFragment. The API invokes this method after the user has
      * installed Google Play services and returned to the app.
-     *
+     * <p>
      * 41.1286° N, 73.8078° W
      */
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        // Add a marker in Sydney, Australia,
+        // Add a marker in Pace Pleasantville
         // and move the map's camera to the same location.
 
         LatLng PacePLV = new LatLng(41.1286, -73.8078);
         googleMap.addMarker(new MarkerOptions().position(PacePLV)
                 .title("Pace Pleasantville"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(PacePLV));
-        googleMap.animateCamera( CameraUpdateFactory.zoomTo( 17.0f ) );
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(17.0f));
 
-        
+        // enable my location button
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            Log.v("MapActivity", "goooooooooooood");
             googleMap.setMyLocationEnabled(true);
         } else {
-            // Show rationale and request permission.
+            Log.v("MapActivity", "faiiiiiiiil");
+
         }
     }
 }

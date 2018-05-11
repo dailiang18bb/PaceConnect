@@ -81,7 +81,7 @@ public class WelcomePageActivity extends AppCompatActivity {
         mMapImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Map.class);
+                Intent intent = new Intent(getApplicationContext(), MapActivity.class);
                 startActivity(intent);
             }
         });
@@ -99,9 +99,9 @@ public class WelcomePageActivity extends AppCompatActivity {
 //        //
 //        mAuth.addAuthStateListener(mAuthStateListener);
 //    }
-
-
-    // Create new account by Email
+//
+//
+//     //Create new account by Email
 //    private void createAccount() {
 //        mAuth.createUserWithEmailAndPassword(email, password)
 //                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
