@@ -25,21 +25,25 @@
         <activity android:name=".HomePageActivity" />
         <activity
             android:name=".MapActivity"
-            android:label="@string/map_activity_label" />
+            android:label="@string/map_activity_label"
+            android:theme="@style/MapTheme"/>
         <activity
             android:name=".SettingActivity"
             android:label="@string/setting_activity_label" />
         <activity
             android:name=".ChatActivity"
-            android:label="@string/chat_activity_label" />
+            android:label="@string/chat_activity_label"
+            android:theme="@style/ChatTheme"/>
+
         <activity
             android:name=".RateActivity"
-            android:label="@string/rate_activity_label" />
-
+            android:label="@string/rate_activity_label"
+            android:theme="@style/RateTheme"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC2p5QmY5sbGBKY8ELObzFRoya7NLuYcxk" />

@@ -12,6 +12,18 @@
     <color name="accent_red">#FFDE4414</color>
     <color name="accent_green">#FF9CB31D</color>
 
+
+
+
+    <color name="dark_green">#689F38</color>
+    <color name="dark_yellow">#F57F17</color>
+    <color name="dark_red">#B71C1C</color>
+
+
+
+
+
+
     <color name="colorTitle">#ffffff</color>
 
 </resources>
