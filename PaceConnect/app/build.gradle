@@ -28,9 +28,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     // Firebase libraries
-    implementation 'com.google.firebase:firebase-core:15.0.0' //Firebase core
-    implementation 'com.google.firebase:firebase-auth:15.0.0' //Authentication
+    implementation 'com.google.firebase:firebase-core:15.0.2' //Firebase core
+    implementation 'com.google.firebase:firebase-auth:15.1.0' //Authentication
     implementation 'com.firebaseui:firebase-ui-auth:3.3.1' //Authentication UI
+
+    //google map
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+
 
 
 }

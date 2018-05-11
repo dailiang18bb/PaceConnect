@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -36,11 +38,13 @@ public class WelcomePageActivity extends AppCompatActivity {
 
     private String mUserName;
 
+    ImageView mMapImageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.welcome_page);
+        setContentView(R.layout.home_page);
 
         // initialize the FirebaseAuth instance.
         mAuth = FirebaseAuth.getInstance();
@@ -54,7 +58,7 @@ public class WelcomePageActivity extends AppCompatActivity {
                     //Toast.makeText(WelcomePageActivity.this, R.string.auth_sign_in_toast, Toast.LENGTH_SHORT).show();
                 } else {
                     // TODO when Sign out
-                    onSignedOutCleanUp();
+                    //onSignedOutCleanUp();
 
                     startActivityForResult(
                             AuthUI.getInstance()
@@ -67,6 +71,22 @@ public class WelcomePageActivity extends AppCompatActivity {
                 }
             }
         };
+
+
+        mMapImageView = findViewById(R.id.map_button);
+
+
+
+
+        mMapImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Map.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
 
